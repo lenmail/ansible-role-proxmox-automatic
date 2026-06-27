@@ -95,12 +95,13 @@
       storage: "{{ proxmox_automatic_storage | default(proxmox_automatic_pve_vm_storage) }}"
     virtio: "{{ virtio_config }}"
     net: "{{ net_config }}"
+    hostpci: "{{ proxmox_automatic_hostpci | default(omit) }}"
     kvm: "{{ proxmox_automatic_kvm | default(true) }}"
     ostype: "{{ proxmox_automatic_os_type | default('l26') }}"
     onboot: "{{ proxmox_automatic_onboot | default(true) }}"
     scsihw: "{{ proxmox_automatic_scsi_hw | default('virtio-scsi-single') }}"
     machine: "{{ proxmox_automatic_machine | default('q35') }}"
-    hotplug: "{{ proxmox_automatic_hotplug | default('disk') }}"
+    hotplug: "{{ proxmox_automatic_hotplug | default('network,disk,cpu,memory,usb') }}"
     vga: "{{ proxmox_automatic_vga | default(omit) }}"
     startup: >-
       {{ 'order=' + (proxmox_automatic_boot_order | default(1) | string) + ',up=' +

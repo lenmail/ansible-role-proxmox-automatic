@@ -144,6 +144,22 @@ Generated installer media names are derived automatically from the target FQDN i
 
 Set `proxmox_automatic_generated_iso_name` only when you explicitly need to override that artifact name.
 
+### GPU Passthrough Example
+
+For workloads that require direct PCI device access, define the Proxmox `hostpci` map in host variables. When the passed-through GPU should be the only graphics device, set `proxmox_automatic_vga` to `none`.
+
+```yaml
+# host_vars/llm.example.com.yml
+proxmox_automatic_memory: 36864
+proxmox_automatic_vcpu: 12
+proxmox_automatic_vga: "none"
+proxmox_automatic_hostpci:
+  hostpci0: "0000:04:00.0,pcie=1,x-vga=1"
+  hostpci1: "0000:05:00.0,pcie=1"
+```
+
+From a DevOps and platform architecture perspective, keep the PCI mapping host-specific. PCI addresses are node-local hardware facts and should not be modeled as shared group defaults unless every target node is intentionally identical.
+
 ### Installation Source Modes
 
 ```yaml

@@ -160,8 +160,18 @@ argument_specs:
 
       proxmox_automatic_hotplug:
         type: str
-        default: "disk"
+        default: "network,disk,cpu,memory,usb"
         description: "Hotplug configuration"
+
+      proxmox_automatic_vga:
+        type: str
+        required: false
+        description: "VGA configuration passed to Proxmox KVM, for example 'none' for GPU passthrough VMs"
+
+      proxmox_automatic_hostpci:
+        type: dict
+        required: false
+        description: "Host PCI passthrough device map passed to Proxmox KVM, keyed by hostpci slot"
 
       # Storage Configuration
       proxmox_automatic_storage:

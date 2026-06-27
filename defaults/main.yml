@@ -22,6 +22,7 @@ proxmox_automatic_preseed_template: "preseed.cfg.j2"
 proxmox_automatic_skip_iso_upload: false
 proxmox_automatic_efi_pre_enrolled_keys: "{{ proxmox_automatic_installer_backend != 'debian13_preseed' }}"
 proxmox_automatic_vga: "{{ 'std' if proxmox_automatic_installer_backend == 'debian13_preseed' else 'default' }}"
+proxmox_automatic_hotplug: "network,disk,cpu,memory,usb"
 
 proxmox_automatic_debian_suite: "trixie"
 proxmox_automatic_debian_mirror: "deb.debian.org"
