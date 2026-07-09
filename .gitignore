@@ -55,6 +55,7 @@ htmlcov/
 
 # Ansible Galaxy
 galaxy.yml
+collections/ansible_collections/
 
 # Generated files during role execution
 playbooks/kickstart-files/

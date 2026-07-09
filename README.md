@@ -80,7 +80,7 @@ db01 proxmox_automatic_vmid=102 ansible_host=db01.example.com
 
 ### Example Inventory Layout
 
-This repository ships a complete example inventory under [examples/inventory](/Users/dominik.lenhardt/git/ansible_roles/ansible-role-proxmox-automatic/examples/inventory) plus an example playbook at [examples/playbook.yml](/Users/dominik.lenhardt/git/ansible_roles/ansible-role-proxmox-automatic/examples/playbook.yml).
+This repository ships a complete example inventory under `examples/inventory` plus an example playbook at `examples/playbook.yml`.
 
 Structure:
 

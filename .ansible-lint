@@ -5,6 +5,8 @@ profile: production
 
 exclude_paths:
   - .cache/
+  - .ci-roles/
+  - examples/roles/
 
 skip_list:
   - yaml[line-length]  # We use yamllint for this
